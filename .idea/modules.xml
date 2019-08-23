@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/SpringBootAppWithGradle.iml" filepath="$PROJECT_DIR$/SpringBootAppWithGradle.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/SpringBootAppWithGradle_main.iml" filepath="$PROJECT_DIR$/.idea/modules/SpringBootAppWithGradle_main.iml" group="SpringBootAppWithGradle" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/SpringBootAppWithGradle_test.iml" filepath="$PROJECT_DIR$/.idea/modules/SpringBootAppWithGradle_test.iml" group="SpringBootAppWithGradle" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lab-SpringBootAppWithGradle.iml" filepath="$PROJECT_DIR$/.idea/modules/lab-SpringBootAppWithGradle.iml" />
     </modules>
   </component>
 </project>

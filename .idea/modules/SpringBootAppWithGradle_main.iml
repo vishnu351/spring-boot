@@ -9,7 +9,7 @@
         <webroots />
       </configuration>
     </facet>
-    <facet type="web" name="Web Gradle : SpringBootAppWithGradle.war">
+    <facet type="web" name="Web Gradle : roo.war">
       <configuration>
         <webroots>
           <root url="file://C:\Users\vreddy1\Documents\lab\SpringBootAppWithGradle\src\main\webapp" relative="/" />
