@@ -4,26 +4,30 @@ buildscript {
 	}
 	repositories {
 		mavenCentral()
+        jcenter()
 	}
 	dependencies {
+        classpath 'com.bmuschko:gradle-cargo-plugin:2.2.3'
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
 	}
 }
 plugins {
 	id 'war'
 }
-war {
-	archiveName 'spring.war'
-}
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: "war"
+apply plugin: 'com.bmuschko.cargo'
 
 jar {
 	baseName = 'boot-gradle'
 	version = '0.0.1-SNAPSHOT'
 }
+war{
+    archiveName = 'spring.war'
+}
+
 
 repositories {
 	mavenCentral()
@@ -34,7 +38,34 @@ bootRepackage {
 }
 
 dependencies {
+    cargo 'org.codehaus.cargo:cargo-core-uberjar:1.4.5',
+            'org.codehaus.cargo:cargo-ant:1.4.5'
 	compile('org.springframework.boot:spring-boot-starter',
 	'org.springframework.boot:spring-boot-starter-web',
 	'org.springframework.boot:spring-boot-starter-thymeleaf')
+}
+
+cargo {
+    containerId = 'tomcat85x'
+    port = 7080
+
+    deployable {
+        context = 'spring'
+    }
+
+    remote {
+        hostname = 'intg-api.uibi.tk'
+        username = 'root'
+        password = 'jenkins'
+    }
+
+//    local {
+//        homeDir = file('/home/user/dev/tools/apache-tomcat-6.0.32')
+//        outputFile = file('build/output.log')
+//        startStopTimeout = 60000
+//
+//        containerProperties {
+//            property 'cargo.tomcat.ajp.port', 9099
+//        }
+//    }
 }
