@@ -7,6 +7,12 @@ pipeline {
                ./gradlew clean build
            '''
       }
+      stage('run') {
+      steps {
+        sh ''' chmod +x gradlew 
+               ./gradlew bootRun
+           '''
+      }
     }
   }
 }
